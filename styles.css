@@ -1,136 +1,295 @@
-/* estilos.css */
+/* ==============================
+   Reseteo básico
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
-  }
-  
-  header, footer {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 1em;
-  }
-  
-  header h1, footer p {
-    margin: 0;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* ==============================
+   Header
+============================== */
+header {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav button {
+  background-color: #fff;
+  color: #0d6efd;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+nav button:hover {
+  background-color: #e0e0e0;
+}
+
+/* ==============================
+   Main Content
+============================== */
+main {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+/* ==============================
+   Sección Calculadora
+============================== */
+#calculadora {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+#calculadora h2 {
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+fieldset legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: inline-block;
+  width: 220px;
+  margin-bottom: 0.5rem;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+  width: 200px;
+}
+
+button#btnCalcular {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+button#btnCalcular:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+/* ==============================
+   Sección Resultados
+============================== */
+#resultados {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+#resultados h3 {
+  margin-top: 1rem;
+  color: #0d6efd;
+}
+
+/* ==============================
+   Sección Publicación de Datos y Gráficas
+============================== */
+#published-data-section {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+#published-data-section h2 {
+  margin-bottom: 1rem;
+}
+
+#datosPublicados h3 {
+  margin-top: 1rem;
+  color: #0d6efd;
+}
+
+#datosPublicados table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+#datosPublicados table th,
+#datosPublicados table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* ==============================
+   Secciones de Tablas Comparativas
+============================== */
+#tablaComparativaElectrica,
+#tablaComparativaAgua,
+#tablaComparativaOficina,
+#tablaComparativaLimpieza {
+  margin-top: 1rem;
+}
+
+#tablaComparativaElectrica table,
+#tablaComparativaAgua table,
+#tablaComparativaOficina table,
+#tablaComparativaLimpieza table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+#tablaComparativaElectrica th,
+#tablaComparativaAgua th,
+#tablaComparativaOficina th,
+#tablaComparativaLimpieza th,
+#tablaComparativaElectrica td,
+#tablaComparativaAgua td,
+#tablaComparativaOficina td,
+#tablaComparativaLimpieza td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+/* ==============================
+   Sección Ayuda
+============================== */
+.ayuda {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  max-width: 90%;
+  background-color: #fff;
+  border: 2px solid #0d6efd;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 999;
+}
+
+.ayuda h2 {
+  margin-bottom: 1rem;
+  color: #0d6efd;
+}
+
+.ayuda .contenido-ayuda {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.ayuda button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.ayuda button:hover {
+  background-color: #c82333;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background-color: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* ==============================
+   Ajustes Responsivos
+============================== */
+@media (max-width: 768px) {
   main {
-    padding: 1em;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1rem;
+    margin: 1rem;
   }
-  
-  fieldset {
-    border: 1px solid #ccc;
-    margin-bottom: 1em;
-    padding: 1em;
-    background-color: #fff;
-  }
-  
-  legend {
-    font-weight: bold;
-  }
-  
-  label {
+  label, input[type="number"], input[type="text"], select {
+    width: 100%;
     display: block;
-    margin-top: 0.5em;
   }
-  
-  input[type="number"],
-  input[type="text"],
-  select {
-    width: 100%;
-    padding: 0.5em;
-    margin-top: 0.3em;
-    box-sizing: border-box;
+  label {
+    margin-bottom: 0.3rem;
   }
-  
-  button {
-    margin-top: 1em;
-    padding: 0.7em 1.5em;
-    background-color: #0073e6;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #005bb5;
-  }
-  
-  .error {
-    color: red;
-    margin-top: 0.5em;
-  }
-  
-  .oculto {
-    display: none;
-  }
-  
-  /* Sección de Publicación de Datos */
-  #published-data-section {
-    background-color: #e6f2ff;
-    padding: 1em;
-    margin-top: 2em;
-    border: 1px solid #99ccff;
-  }
-  
-  #datosPublicados {
-    margin-bottom: 1em;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1em;
-  }
-  
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-  
-  th, td {
-    padding: 0.5em;
-    text-align: left;
-  }
-  
+  /* Ajuste para las gráficas y canvas: mantener un tamaño adecuado */
   canvas {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin-bottom: 1em;
+    width: 100% !important;
+    height: auto !important;
   }
-  
-  /* Sección de Ayuda */
+  /* Sección Ayuda: se ajusta para pantallas más pequeñas */
   .ayuda {
-    position: fixed;
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    bottom: 5%;
-    background-color: #fff;
-    border: 2px solid #004080;
-    padding: 1em;
-    overflow-y: auto;
-    z-index: 1000;
+    width: 90%;
+    top: 10%;
   }
-  
-  .contenido-ayuda h3 {
-    color: #004080;
-    margin-bottom: 0.5em;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
   }
-  
-  .contenido-ayuda p, .contenido-ayuda ul {
-    margin-bottom: 1em;
+  nav button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9em;
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    body {
-      font-size: 14px;
-    }
+  main {
+    padding: 0.5rem;
   }
-  
+  fieldset {
+    padding: 0.5rem;
+  }
+}
